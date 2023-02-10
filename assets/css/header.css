@@ -1,0 +1,74 @@
+.header{
+display: flex;
+flex-direction:column;
+align-items: center;
+}
+.header .photo {
+width:200px;
+height: 200px;
+border-radius: 50%;
+
+}
+.header .title {
+    font-family:'neue-machina';
+    text-align: center;
+}
+.info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.info p{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.125rem;
+    margin: .5rem;
+}
+ .info p::before{
+    content: '';
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: .5rem;
+    filter: invert();
+}
+
+.info .job::before {
+    background-image: url(/assets/img/icons/job-profile-svgrepo-com.svg);
+}
+.info .location::before {
+    background-image: url(/assets/img/icons//location-svgrepo-com.svg);
+}
+.info .phone::before {
+    background-image: url(/assets/img/icons/phone-svgrepo-com.svg);
+}
+.info .email::before {
+    background-image: url(/assets/img/icons/email-svgrepo-com.svg);
+}
+
+@media only screen and (min-width:768px)
+{
+    .header{
+        display: grid;
+        grid-template-areas: 
+        "photo title"
+        "photo info";
+    }
+    .header .photo{
+        grid-area: photo;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .header .title{
+        grid-area: title;
+        text-align: start;
+    }
+    .header .info{
+        grid-area: info;
+    }
+    
+}
